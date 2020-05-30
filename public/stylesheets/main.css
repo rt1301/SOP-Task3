@@ -1,0 +1,25 @@
+a
+{
+    color: dodgerblue;
+    text-decoration: none;
+}
+.container
+{
+    text-align: center;
+}
+
+i.icon
+{
+	font-size: 2em;
+}
+.container.main{
+	margin-top: 5.0em;
+}
+#delete
+{
+	display:inline;
+}
+.ui.button
+{
+    margin-bottom: 10px;
+}

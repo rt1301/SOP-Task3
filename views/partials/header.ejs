@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <title>Blog App</title>
+</head>
+<body>
+    <div class="ui pointing menu">
+        <div class="ui container">
+            <div class="header item"><i class="code icon"></i> Blog Site</div>
+            <a class="active item" href="/blogs/<%=id%>">
+                Home
+              </a>
+              <a class="item" href="/blogs/<%=id%>/new">
+                New Post
+              </a>
+              <div class="right menu">
+                <div class="item">
+                    <form action="/blogs/<%=id%>/users" method="POST" class="ui form">
+                        <div class="field">
+                          <div class="ui transparent icon input">
+                          <input type="text" placeholder="Search User" name="user">
+                          <i class="search link icon"></i>
+                          </div>
+                          </div>
+                    </form>
+                </div>
+                <%if(!currentUser){%>
+                    <a href="/login" class="item">Login</a>
+                    <a href="/register"  class="item">Sign Up</a>	
+                    <%}else{%>
+                    <a href="/blogs/<%=id%>/profile" class="item"><i class="user outline icon"></i> <%=currentUser.username%></a>
+                    <a href="/logout" class="item">Logout</a>
+                    <%}%>	
+              </div>
+            </div> 
+    </div>

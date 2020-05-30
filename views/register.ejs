@@ -1,0 +1,22 @@
+<%-include("partials/header.ejs")%>
+<div class="ui main text container segment">
+    <div class="ui huge header">Register</div>
+    <div class="ui small header">Please fill in this form to create an account.</div>
+    <form class="ui form" action="/register" method="POST">
+        <div class="field">
+          <label>Username</label>
+          <input type="text" name="username" placeholder=" Username">
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input type="password" name="password" placeholder="Password">
+        </div>
+        <button class="ui button" type="submit">Register</button>
+    </form>
+    <div class="ui form">
+        <div class="ui message">
+          <div class="header">Already have an account?<a href="/login"> Login</a></div>
+        </div>
+      </div>
+</div>
+<%-include("partials/footer.ejs")%>

@@ -1,0 +1,29 @@
+<%-include("partials/header.ejs")%>
+<div class="ui main text container segment">
+	<div class="ui huge header">
+		New Post!
+	</div>
+	<form class="ui form" action="/blogs/<%=id%>" method="POST">
+		<div class="field">
+		<label>Title</label>
+		<input type="text" name="blog[title]" placeholder="title">	
+		</div>
+		<div class="field">
+		<label>Image</label>
+		<input type="text" name="blog[image]" placeholder="image">
+		</div>
+		<div class="field">
+		<label>Body</label>
+		<textarea name="blog[body]" placeholder="Content" required></textarea>	
+		</div>
+		<div class="field">
+		<label>Author</label>
+		<input type="text" name="blog[author]" value="<%=currentUser.username%>" readonly>
+		</div>
+		<div class="field">
+		<input class="ui blue big basic button" type="submit">	
+		</div>
+	</form>
+</div>
+
+<%-include("partials/footer.ejs")%>

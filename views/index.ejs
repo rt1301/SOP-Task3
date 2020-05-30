@@ -1,0 +1,42 @@
+<%-include("partials/header.ejs")%>
+
+<div class="ui main text container">
+    <div class="ui huge header">My Blogs <i class="far fa-smile"></i></div>
+		<div class="ui top attached segment">
+			<%blogs.forEach(function(blog){%>
+				<%if(blog.author === id){%>
+					<div class="ui divided items">
+					<div class="item">
+					<div class="image">
+					<img src="<%=blog.image%>">
+					</div>
+					<div class="content">
+					<a class="header" href="/blogs/<%=id%>/<%=blog._id%>">
+						<%=blog.title%>
+					</a>
+					<div class="ui raised segment">
+					<h4 class="ui header">By: <%=blog.author%></h4>
+					</div>
+					<div class="meta">
+					<span><%=blog.created.toDateString()%></span>
+					</div>
+					<div class="container">
+					<p>
+						<%-blog.body.substring(0,100)%>...
+					</p>	
+					</div>
+					<div class="extra">
+					<a class="ui floated basic blue button" href="/blogs/<%=id%>/<%=blog._id%>">
+					Read More 
+					<i class="right chevron icon"></i>
+					</a>	
+					</div>
+					</div>
+					</div>
+				<%}%>	
+			<%});%>
+		</div>
+    </div>
+</div>
+
+<%-include("partials/footer.ejs")%>
