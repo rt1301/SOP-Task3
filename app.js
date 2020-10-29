@@ -200,7 +200,7 @@ app.post("/blogs/:id/users",isLoggedIn,function(req, res){
 			}
 		}
 	});
-})
+});
 // ================
 // AUTH ROUTES
 // ================
